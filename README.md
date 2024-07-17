@@ -1,2 +1,2 @@
 # Codeforces
-solution of some problems from codeforces
+solution of some problems from codeforces in cpp
