@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+	long long int n, m, a, sum;
+    cin >> n >> m >> a;
+	long long int length = 0, width = 0;
+
+    if ((n == m) && (n*m)%(a*a) == 0)
+        sum = (n*m)/(a*a);
+    else 
+    {
+        if (n % a == 0)
+            length = (n/a);
+        else 
+            length = (n/a)+1;
+        
+        if (m % a == 0)
+            width = (m/a);
+        else 
+            width = (m/a)+1;
+
+        sum = length * width;
+    }
+    
+	cout << sum << endl;
+
+}
