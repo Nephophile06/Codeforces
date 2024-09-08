@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, k, l, c, d, p, nl, np;
+    int x, y, z, Min;
+    cin >> n >> k >> l >> c >> d >> p >> nl >> np;
+    x = (k * l) / nl;
+    y = c * d;
+    z = p / np;
+    Min = min((min(x, y)), z) / n;
+    cout << Min << endl;
+    return 0;
+}
