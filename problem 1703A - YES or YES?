@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    int T;
+    cin >> T;
+    string a;
+
+    for (int i = 0; i < T; i++)
+    {
+        cin >> a;
+        if(a == "YES" || a == "YEs" || a == "YeS" || a == "yES" || a == "Yes" || a == "yEs" || a == "yeS" || a == "yes")
+            cout << "YES" << endl;
+        else 
+            cout << "NO" << endl;
+    }
+
+    return 0;
+}
