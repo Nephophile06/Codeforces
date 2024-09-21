@@ -1,0 +1,22 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main() 
+{
+    int T;
+    cin >> T;
+    int arr[T], MAX = 0, ans = 0;
+
+    for (int i = 0; i < T; i++)
+    {
+        cin >> arr[i];
+        MAX = max(arr[i], MAX);
+    }
+
+    for (int j = 0; j < T; j++)
+    {
+        ans += MAX - arr[j];
+    }
+
+    cout << ans << endl;
+}
