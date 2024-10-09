@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int t;
+    cin >> t;
+    int x = 4, y;
+
+    while (true)
+    {
+        y = t - x;
+
+        int x1 = 0;
+        for (int i = 2; i*i <= x; i++)
+        {
+            if (x % i == 0)
+            {
+                x1 = 1;
+                break;
+            }
+        }
+
+        int y1 = 0;
+        for (int i = 2; i*i <= y; i++)
+        {
+            if (y % i == 0)
+            {
+                y1 = 1;
+                break;
+            }
+        }
+
+        if (x1 && y1)
+            break;
+        x++;
+    }
+
+    cout << x << " " << y << endl;
+    return 0;
+}
