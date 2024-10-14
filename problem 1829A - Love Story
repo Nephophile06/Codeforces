@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int t;
+    cin >> t;
+    string a;
+
+    for (int i = 0; i < t; i++)
+    {
+        cin >> a;
+        int count = 0;
+
+        if (a[0] != 'c')
+            count++;
+        if (a[1] != 'o')
+            count++;
+        if (a[2] != 'd')
+            count++;
+        if (a[3] != 'e')
+            count++;
+        if (a[4] != 'f')
+            count++;
+        if (a[5] != 'o')
+            count++;
+        if (a[6] != 'r')
+            count++;
+        if (a[7] != 'c')
+            count++;
+        if (a[8] != 'e')
+            count++;
+        if (a[9] != 's')
+            count++;
+        cout << count << endl;
+    }
+	return 0;
+}
