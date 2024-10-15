@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int n; 
+    cin>>n;
+    int count = 0, m = 1;
+
+    for (int i = 1; m <= n; i++)
+    {
+        m = ((i*i) + i) / 2;
+
+        if (m > n) 
+            break;
+        n = n - m;
+        count++;
+    }
+
+    cout << count << endl;
+	return 0;
+}
