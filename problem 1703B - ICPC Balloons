@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() 
+{
+    int t;
+    cin >> t;
+
+    while (t--) 
+    {
+        int n;
+        cin >> n;
+        string s;
+        cin >> s;
+
+        int totalBalloons = 0;
+        bool solved[26] = {0}; 
+
+        for (char c : s) 
+        {
+            if (!solved[c - 'A']) 
+            {
+                totalBalloons += 2; 
+                solved[c - 'A'] = true;
+            } 
+            
+            else 
+                totalBalloons += 1; 
+        }
+
+        cout << totalBalloons << endl;
+    }
+
+    return 0;
+}
