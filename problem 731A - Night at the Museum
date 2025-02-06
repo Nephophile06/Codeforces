@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int main() 
+{
+    string s;
+    cin >> s;
+    int total_effort = 0;
+    char current = 'a'; 
+
+    for (int i = 0; i < s.length(); i++) 
+    {
+        int target = s[i] - 'a'; 
+        int current_pos = current - 'a'; 
+        int clockwise_dist = abs(target - current_pos);
+        int counterclockwise_dist = 26 - clockwise_dist;
+
+        total_effort += min(clockwise_dist, counterclockwise_dist);
+        current = s[i];
+    }
+
+    cout << total_effort << endl;
+    return 0;
+}
