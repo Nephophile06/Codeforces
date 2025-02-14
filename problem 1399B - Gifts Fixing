@@ -1,0 +1,39 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() 
+{
+    int t;
+    cin >> t;
+    
+    while (t--) 
+    {
+        int n;
+        cin >> n;
+        long long a[n], b[n];
+        long long min_candies = 1e9, min_oranges = 1e9;
+
+        for (int i = 0; i < n; i++) 
+        {
+            cin >> a[i];
+            if (a[i] < min_candies) min_candies = a[i];
+        }
+
+        for (int i = 0; i < n; i++) 
+        {
+            cin >> b[i];
+            if (b[i] < min_oranges) min_oranges = b[i];
+        }
+
+        long long total_moves = 0;
+        for (int i = 0; i < n; i++) 
+        {
+            total_moves += max(a[i] - min_candies, b[i] - min_oranges);
+        }
+
+        cout << total_moves << "\n";
+    }
+
+    return 0;
+}
