@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int t;
+    cin >> t;
+    
+    while (t--) 
+    {
+        char grid[3][3];
+        int missingRow, missingCol;
+    
+        for (int i = 0; i < 3; i++) 
+        {
+            for (int j = 0; j < 3; j++) 
+            {
+                cin >> grid[i][j];
+                if (grid[i][j] == '?') 
+                {
+                    missingRow = i;
+                    missingCol = j;
+                }
+            }
+        }
+
+        char letters[] = {'A', 'B', 'C'};
+        for (char ch : letters) 
+        {
+            bool found = false;
+            for (int i = 0; i < 3; i++) 
+            {
+                if (grid[missingRow][i] == ch || grid[i][missingCol] == ch) 
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) 
+                cout << ch << "\n";
+        }
+    }
+
+    return 0;
+}
