@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    string table_card;
+    cin >> table_card;
+    string hand[5];
+
+    for (int i = 0; i < 5; i++) 
+    {
+        cin >> hand[i];
+    }
+    
+    char table_rank = table_card[0];
+    char table_suit = table_card[1];
+
+    for (int i = 0; i < 5; i++) 
+    {
+        if (hand[i][0] == table_rank || hand[i][1] == table_suit) 
+        {
+            cout << "YES" << endl;
+            return 0;
+        }
+    }
+
+    cout << "NO" << endl;
+    return 0;
+}
