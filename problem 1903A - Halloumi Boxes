@@ -1,0 +1,51 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() 
+{
+    int t;
+    cin >> t;
+
+    while (t--) 
+    {
+        int n, k;
+        cin >> n >> k;
+        int a[n], sorted_a[n];
+    
+        for (int i = 0; i < n; i++) 
+        {
+            cin >> a[i];
+            sorted_a[i] = a[i];
+        }
+    
+        sort(sorted_a, sorted_a + n); 
+        if (k == n) 
+        {
+            cout << "YES\n";
+            continue;
+        }
+    
+        if (k > 1) 
+        {
+            cout << "YES\n";
+            continue;
+        }
+    
+        bool is_sorted = true;
+        for (int i = 0; i < n; i++) 
+        {
+            if (a[i] != sorted_a[i]) 
+            {
+                is_sorted = false;
+                break;
+            }
+        }
+    
+        if (is_sorted) 
+            cout << "YES\n";
+        else 
+            cout << "NO\n";
+    }
+    return 0;
+}
