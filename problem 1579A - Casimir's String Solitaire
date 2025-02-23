@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int t;
+    cin >> t;
+
+    while (t--) 
+    {
+        string s;
+        cin >> s;    
+        int countA = 0, countB = 0, countC = 0;
+    
+        for (char ch : s) 
+        {
+            if (ch == 'A') 
+                countA++;
+            else if (ch == 'B') 
+                countB++;
+            else if (ch == 'C') 
+                countC++;
+        }
+    
+        if (countB == countA + countC)
+            cout << "YES\n";
+        else
+            cout << "NO\n";
+    }
+    return 0;
+}
