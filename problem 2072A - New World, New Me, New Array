@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) 
+    {
+        int n, k, p;
+        cin >> n >> k >> p;
+        int min = n * (-p);
+        int max = n * p;
+    
+        if (k < min || k > max) 
+        {
+            cout << -1 << "\n";
+            continue;
+        }
+    
+        int a = abs(k);
+        int b = p;
+        int c = (a + b - 1) / b;
+        cout << c << "\n";
+    }
+    return 0;
+}
