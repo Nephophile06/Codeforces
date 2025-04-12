@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int n;
+    long long x;
+    cin >> n >> x;
+
+    long long current = x;
+    int distressed = 0;
+
+    for (int i = 0; i < n; ++i) 
+    {
+        char op;
+        long long d;
+        cin >> op >> d;
+
+        if (op == '+') 
+            current += d;
+        else 
+        {
+            if (current >= d) 
+                current -= d;
+            else 
+                distressed++;
+        }
+    }
+
+    cout << current << " " << distressed << endl;
+    return 0;
+}
