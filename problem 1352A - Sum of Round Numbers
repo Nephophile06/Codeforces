@@ -1,0 +1,44 @@
+// Problem: A. Sum of Round Numbers
+// Contest: Codeforces - Codeforces Round 640 (Div. 4)
+// URL: https://codeforces.com/problemset/problem/1352/A
+// Memory Limit: 256 MB
+// Time Limit: 1000 ms
+// author: Anika
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() 
+{
+    int t;
+    cin >> t;
+
+    while (t--) 
+    {
+        int n;
+        cin >> n;
+
+        vector<int> res;
+        int place = 1;
+
+        while (n > 0) 
+        {
+            int digit = n % 10;
+            if (digit != 0) 
+                res.push_back(digit * place);
+            n /= 10;
+            place *= 10;
+        }
+
+        cout << res.size() << endl;
+        for (int val : res) 
+        {
+            cout << val << " ";
+        }
+        
+        cout << endl;
+    }
+
+    return 0;
+}
