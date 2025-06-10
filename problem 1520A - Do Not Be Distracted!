@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int t; 
+    cin >> t;
+    while (t--) 
+    {
+        int n; 
+        cin >> n;
+        string tasks;
+        cin >> tasks;
+        set<char> closed;
+        char prev = '\0';
+        bool suspicious = false;
+
+        for (char ch : tasks) 
+        {
+            if (ch != prev) 
+            {
+                if (closed.find(ch) != closed.end()) 
+                {
+                    suspicious = true;
+                    break;
+                }
+                
+                if (prev != '\0') 
+                {
+                    closed.insert(prev);
+                }
+                prev = ch;
+            }
+        }
+
+        if (suspicious)
+            cout << "NO\n";
+        else
+            cout << "YES\n";
+    }
+    
+    return 0;
+}
