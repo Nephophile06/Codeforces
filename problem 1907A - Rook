@@ -1,0 +1,54 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+vector<string> findRookMoves(const string& position) 
+{
+    char col = position[0];
+    char row = position[1];
+
+    vector<string> moves;
+    for (char c = 'a'; c <= 'h'; ++c) 
+    {
+        if (c != col) 
+        {
+            moves.push_back(string(1, c) + row);
+        }
+    }
+
+    for (char r = '1'; r <= '8'; ++r) 
+    {
+        if (r != row) 
+        {
+            moves.push_back(string(1, col) + r);
+        }
+    }
+
+    return moves;
+}
+
+int main() 
+{
+    int t;
+    cin >> t;
+
+    while (t--) 
+    {
+        string position;
+        cin >> position;
+        
+        vector<string> moves = findRookMoves(position);
+        for (const string& move : moves) 
+        {
+            cout << move << '\n';
+        }
+
+        if (t > 0) 
+        {
+            cout << '\n';   
+        }
+    }
+
+    return 0;
+}
