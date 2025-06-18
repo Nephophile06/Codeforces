@@ -23,7 +23,7 @@ problem 1221B - Knights
 
 ## 📬 Contact
 If you'd like to connect or collaborate, feel free to reach out via [GitHub](https://github.com/YourGitHubUsername)  
-or email me at: **anika.shifa@email.com**
+or email me at: **anikabintaazad24@gmail.com**
 
 ## 📖 License
 This repository is open-source for learning purposes.  
