@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int t; 
+    cin >> t;
+    
+    while(t--) 
+    {
+        int x; 
+        cin >> x;
+        
+        string str = to_string(x);
+        int y = 0;
+
+        while(true) 
+        {
+            string str2 = to_string(y);
+            bool ok = false;
+
+            for(char c : str)
+                if(str2.find(c) != string::npos)
+                    ok = true;
+            
+            if(ok) 
+                break;
+            
+            y++;
+        }
+        
+        cout << y << "\n";
+    }
+    
+    return 0;
+}
