@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+ 
+    while (t--)
+    {
+        int n;
+        cin >> n;
+
+        string ans = "";
+        for (int i = 1; i <= 26; i++)
+        {
+            int rem = n - i;
+            if (rem < 2 || rem > 52)
+                continue;
+
+            for (int j = 1; j <= 26; j++)
+            {
+                int k = rem - j;
+                if (k >= 1 && k <= 26)
+                {
+                    ans.push_back('a' + i - 1);
+                    ans.push_back('a' + j - 1);
+                    ans.push_back('a' + k - 1);
+                    break;
+                }
+            }
+
+            if (!ans.empty())
+                break;
+        }
+
+        cout << ans << "\n";
+    }
+    
+    return 0;
+}
